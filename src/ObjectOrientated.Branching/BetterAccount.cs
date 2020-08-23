@@ -11,7 +11,7 @@ namespace ObjectOrientated.Branching
 	{
 		private bool IsVerified { get; set; }
 		private bool IsClosed { get; set; }
-
+		private bool IsFrozen { get;set; }
 		private Action OnUnfreeze { get; }
 
 		private Action ManageUnfreezing { get; set; }

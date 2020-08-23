@@ -14,7 +14,7 @@ namespace ObjectOrientated.Branching
 
 		// This removes all logic relating to freezing and unfreezing, including state transition
 		// It is all offloaded into implementations of the IFreezable interface.
-		private IFreezable Freezeable { get; set; }
+		private IAccountState Freezeable { get; set; }
 
 		public AccountWithState(
 			Action onUnfreeze)

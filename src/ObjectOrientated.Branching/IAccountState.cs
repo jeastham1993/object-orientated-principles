@@ -4,24 +4,28 @@ using System.Text;
 
 namespace ObjectOrientated.Branching
 {
-    interface IFreezable
+    interface IAccountState
     {
         /// <summary>
         /// Deposit into the account.
         /// </summary>
         /// <returns>The new freezable state.</returns>
-	    IFreezable Deposit();
+	    IAccountState Deposit(Action addToBalance);
 
         /// <summary>
         /// Withdraw from the account.
         /// </summary>
         /// <returns>The new freezable state.</returns>
-	    IFreezable Withdraw();
+	    IAccountState Withdraw(Action subtractFromBalance);
 
         /// <summary>
         /// Freeze the account.
         /// </summary>
         /// <returns>The new freezable state.</returns>
-	    IFreezable Freeze();
+	    IAccountState Freeze();
+
+        IAccountState Close();
+
+        IAccountState HolderVerified();
     }
 }

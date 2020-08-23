@@ -4,19 +4,18 @@ using System.Text;
 
 namespace ObjectOrientated.Branching
 {
-    class Active : IAccountState
+    class NotVerified : IAccountState
     {
-	    private Action OnUnfreeze { get; }
+		private Action OnUnfreeze { get; set; }
 
-	    public Active(
+	    public NotVerified(
 		    Action onUnfreeze)
 	    {
 		    this.OnUnfreeze = onUnfreeze;
 	    }
 
 	    /// <inheritdoc />
-	    public IAccountState Deposit(
-		    Action addToBalance)
+	    public IAccountState Deposit(Action addToBalance)
 	    {
 		    addToBalance();
 
@@ -24,20 +23,15 @@ namespace ObjectOrientated.Branching
 	    }
 
 	    /// <inheritdoc />
-	    public IAccountState Withdraw(Action withdrawFromBalance)
-	    {
-		    withdrawFromBalance();
-
-		    return this;
-	    }
+	    public IAccountState Withdraw(Action subtractFromBalance) => this;
 
 	    /// <inheritdoc />
-	    public IAccountState Freeze() => new Frozen(this.OnUnfreeze);
+	    public IAccountState Freeze() => this;
 
 	    /// <inheritdoc />
 	    public IAccountState Close() => new Closed();
 
 	    /// <inheritdoc />
-	    public IAccountState HolderVerified() => this;
+	    public IAccountState HolderVerified() => new Active(this.OnUnfreeze);
     }
 }

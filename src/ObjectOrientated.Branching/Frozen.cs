@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ObjectOrientated.Branching
 {
-    class Frozen : IFreezable
+    class Frozen : IAccountState
     {
 		private Action OnUnfreeze { get; }
 
@@ -15,22 +15,30 @@ namespace ObjectOrientated.Branching
 		}
 
 	    /// <inheritdoc />
-	    public IFreezable Deposit()
+	    public IAccountState Deposit(Action addToBalance)
 	    {
 		    this.OnUnfreeze();
+
+		    addToBalance();
 
 		    return new Active(this.OnUnfreeze);
 	    }
 
 	    /// <inheritdoc />
-	    public IFreezable Withdraw()
+	    public IAccountState Withdraw(Action subtractFromBalance)
 	    {
 		    this.OnUnfreeze();
-
-			return new Active(this.OnUnfreeze);
+		    subtractFromBalance();
+		    return new Active(this.OnUnfreeze);
 	    }
 
 	    /// <inheritdoc />
-	    public IFreezable Freeze() => this; // DO NOTHING because the account is already frozen.
+	    public IAccountState Freeze() => this; // DO NOTHING because the account is already frozen.
+
+	    /// <inheritdoc />
+	    public IAccountState Close() => new Closed();
+
+	    /// <inheritdoc />
+	    public IAccountState HolderVerified() => this;
     }
 }
