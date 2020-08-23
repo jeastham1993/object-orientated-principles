@@ -6,22 +6,31 @@ namespace ObjectOrientated.Branching
 {
     class Frozen : IFreezable
     {
+		private Action OnUnfreeze { get; }
+
+		public Frozen(
+			Action onUnfreeze)
+		{
+			this.OnUnfreeze = onUnfreeze;
+		}
+
 	    /// <inheritdoc />
 	    public IFreezable Deposit()
 	    {
-		    throw new NotImplementedException();
+		    this.OnUnfreeze();
+
+		    return new Active(this.OnUnfreeze);
 	    }
 
 	    /// <inheritdoc />
 	    public IFreezable Withdraw()
 	    {
-		    throw new NotImplementedException();
+		    this.OnUnfreeze();
+
+			return new Active(this.OnUnfreeze);
 	    }
 
 	    /// <inheritdoc />
-	    public IFreezable Freeze()
-	    {
-		    throw new NotImplementedException();
-	    }
+	    public IFreezable Freeze() => this; // DO NOTHING because the account is already frozen.
     }
 }
