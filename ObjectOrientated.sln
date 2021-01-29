@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectOrientated.BadCode", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectOrientated.Branching", "src\ObjectOrientated.Branching\ObjectOrientated.Branching.csproj", "{004F620A-D9A3-407F-936C-88645A405A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOrientated.Loops", "src\ObjectOrientated.Loops\ObjectOrientated.Loops.csproj", "{EBC02E86-EBBC-4DD9-BD16-9FF9DFB4BC22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectOrientated.Loops", "src\ObjectOrientated.Loops\ObjectOrientated.Loops.csproj", "{EBC02E86-EBBC-4DD9-BD16-9FF9DFB4BC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectOrientated.Collections", "src\ObjectOrientated.Collections\ObjectOrientated.Collections.csproj", "{CE5F7E8E-7339-48A2-97A4-B9D27372461D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{EBC02E86-EBBC-4DD9-BD16-9FF9DFB4BC22}.Release|x64.Build.0 = Release|Any CPU
 		{EBC02E86-EBBC-4DD9-BD16-9FF9DFB4BC22}.Release|x86.ActiveCfg = Release|Any CPU
 		{EBC02E86-EBBC-4DD9-BD16-9FF9DFB4BC22}.Release|x86.Build.0 = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|x64.Build.0 = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE5F7E8E-7339-48A2-97A4-B9D27372461D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
